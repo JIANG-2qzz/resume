@@ -20,10 +20,11 @@ jobs:
       - name: build app
         run : npm run build
       - name: copy dist file with scp
-        uses: appleboy/scp-action@v0.0.1
+        uses: easingthemes/ssh-deploy@main
         with:
-          host: "43.138.240.56"
-          username: ${{ secrets.ECS_REMOTE_USER}}
-          password: ${{ secrets.ECS_REMOTE_PASSWORD}}
-          source: "dist/"
-          target: "/www/client/2qzzjiangl"
+          ARGS: "-avz --delete"
+          SSH_PRIVATE_KEY: ${{ secrets.ECS_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.ECS_SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.ECS_REMOTE_USER }}
+          SOURCE: "dist"
+          TARGET: "/www/client/2qzzjiangl"
