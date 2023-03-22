@@ -2,7 +2,7 @@
 export const Content = () => {
     return (
         <div>
-            <h2>个人简介1</h2>
+            <h2>个人简介12</h2>
             <p>
                 热爱前端开发，热爱编程，认真负责，自学能力强，目前自学了React和Vue。
             </p>
