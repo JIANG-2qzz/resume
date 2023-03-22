@@ -17,12 +17,12 @@ jobs:
           npm install
           npm run build
 
-      - name: DeployECS
-      - uses: easingthemes/ssh-deploy@v2
-      - env:
-          ARGS: "-avz --delete"
-          SSH_PRIVATE_KEY: ${{ secrets.ECS_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.ECS_SERVER_HOST }}
-          REMOTE_USER: ${{ secrets.ECS_REMOTE_USER }}
-          SOURCE: "dist"
-          TARGET: "/www/client/2qzzjiangl"
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.ECS_PRIVATE_KEY }}
+            ARGS: "-rlgoDzvc -i --delete"
+            SOURCE: "dist/"
+            REMOTE_HOST: ${{ secrets.ECS_SERVER_HOST }}
+            REMOTE_USER: ${{ secrets.ECS_REMOTE_USER }}
+            EXCLUDE: "/dist/, /node_modules/"
