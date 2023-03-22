@@ -2,7 +2,7 @@ import style from './introduction.module.less'
 const Introduction = () => {
     return (
         <div style={{ margin: '50px' }} className={style.introductionBox}>
-            <img src="./lp.jpg" alt="lp.jpg" style={{ width: '150px', borderRadius: '50%' }} />
+            <img src="./vite.svg" alt="lp.jpg" style={{ width: '150px', borderRadius: '50%' }} />
             <div>
                 <p>姜磊</p>
                 <p>GitHub: <a href="https://github.com/JIANG-2qzz">-Jiang-</a></p>
