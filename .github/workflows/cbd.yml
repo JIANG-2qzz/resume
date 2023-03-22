@@ -10,19 +10,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build
-        run: yarn && yarn run deploy
-      - name: DeployGP
-        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-      - name: DeployECS
-      - uses: easingthemes/ssh-deploy@v2
-      - env:
-          ARGS: "-avz --delete"
-          SSH_PRIVATE_KEY: ${{ secrets.ECS_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.ECS_SERVER_HOST }}
-          REMOTE_USER: ${{ secrets.ECS_REMOTE_USER }}
-          SOURCE: "dist"
-          TARGET: "/www/static/doc/bruce"
+          persist-credentials: false
+
+      - name: Install and Build # 下载依赖 打包项目
+      run: |
+        npm install
+        npm run build
+
+
+      - name: Deploy # 将打包内容发布到 github page
+        uses: JamesIves/github-pages-deploy-action@3.5.9 # 使用别人写好的 actions
+        with:  # 自定义环境变量
+          ACCESS_TOKEN: ${{ secrets.JL_token }} # VUE_ADMIN_TEMPLATE 是我的 secret 名称，需要替换成你的
+          BRANCH: master
+          FOLDER: dist
+          REPOSITORY_NAME: jiang-2qzz.github.io # 这是我的 github page 仓库
+          TARGET_FOLDER: /www/client/2qzzjiangl # 打包的文件将放到静态服务器 github-actions-demo 目录下
