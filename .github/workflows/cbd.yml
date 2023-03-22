@@ -17,8 +17,12 @@ jobs:
           npm install
           npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.JL_TOKEN }}
-          publish_dir: ./dist
+      - name: DeployECS
+      - uses: easingthemes/ssh-deploy@v2
+      - env:
+          ARGS: "-avz --delete"
+          SSH_PRIVATE_KEY: ${{ secrets.ECS_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.ECS_SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.ECS_REMOTE_USER }}
+          SOURCE: "dist"
+          TARGET: "/www/client/2qzzjiangl"
