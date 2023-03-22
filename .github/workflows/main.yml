@@ -6,7 +6,7 @@ on: # 监听 master 分支上的 push 事件
 
 jobs:
   build:
-  name: Deploy_website
+    name: Deploy_website
     runs-on: ubuntu-latest # 构建环境使用 ubuntu
     steps:
       - name: Checkout
