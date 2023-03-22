@@ -25,6 +25,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.ECS_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.ECS_SERVER_HOST }}
           REMOTE_USER: ${{ secrets.ECS_REMOTE_USER }}
-          SOURCE: "dist"
+          SOURCE: "dist/*"
           ARGS: '-avzr --delete'
           TARGET: "/www/client/2qzzjiangl/"
