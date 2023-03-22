@@ -27,4 +27,4 @@ jobs:
           REMOTE_USER: ${{ secrets.ECS_REMOTE_USER }}
           SOURCE: "dist"
           ARGS: '-avzr --delete'
-          TARGET: "/www/client/2qzzjiangl"
+          TARGET: "/www/client/2qzzjiangl/"
