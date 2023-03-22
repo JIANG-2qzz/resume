@@ -22,7 +22,7 @@ jobs:
       - name: copy dist file with scp
         uses: appleboy/scp-action@v0.0.1
         with:
-          host: ${{ secrets.ECS_SERVER_HOST}}
+          host: "43.138.240.56"
           username: ${{ secrets.ECS_REMOTE_USER}}
           password: ${{ secrets.ECS_REMOTE_PASSWORD}}
           source: "dist/"
