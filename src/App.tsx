@@ -1,5 +1,6 @@
-import { Content } from "./components/content"
+
 import ContentLayout from "./components/layout/content"
+import Content from './components/content/content'
 import './App.css'
 function App() {
   return (
