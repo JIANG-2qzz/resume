@@ -14,7 +14,9 @@
 
 深入理解`JavaScript`语言，了解node和ES6常用语法
 
-熟练`React`、`Vue`框架进行模块化开发单页应用，能够使用React，React-router, mobx, vite 从0-1完成一个整体项目
+熟练`React`框架，能够使用React，React-router, mobx,  vite 从0-1完成一个整体项目
+
+熟练`Vue3`框架，能够使用Vue，Vue-router, vuex,  vite 从0-1完成一个整体项目
 
 熟练Flex布局、熟悉`Ant Design`、`ElementUI`、
 
@@ -42,7 +44,7 @@
 
 封装`useImg`自定义hook, 规范化图片渲染
 
-精准还原ui设计师的设计稿
+精准还原UI设计师的设计稿
 
 独立完成了多个页面功能的开发
 
@@ -88,4 +90,4 @@
 
 技术栈为：`NestJS` + `MongoDB`
 
-后端采用 NestJS 编写，数据库采用 MongoDB，遵循 RESTful API，拥有完善的 swagger 接口文档，
+后端采用 NestJS 编写，数据库采用 MongoDB，遵循 RESTful API，拥有完善的 swagger 接口文档
